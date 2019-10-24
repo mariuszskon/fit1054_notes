@@ -64,3 +64,15 @@ sw  $t3, 8($t0)    # the_list[i+1] = $t3
     * Reusing reisters instead of reading/writing from/to memory all the time
     * Changing loop conditions (if safe) or deferring them until after first iteration
     * Breaking functional calling conventions to reduce instructions, including passing arguments by registers, not using $fp, not using $ra (if safe)
+
+# Algorithms
+
+* Sorting
+    * n is number of element in the list
+    * You might need to multiply complexity by comparison cost e.g. if strings
+
+| Algorithm      | Overview                                       | Best                               | Worst  | Stable                  | Incremental                    |
+| Bubble sort    | Repeatedly swap adjacent out-of-order elements | O(n^2), or O(n) if detecting swaps | O(n^2) | Yes (strict inequality) | Yes (if element added to front, which sucks because it is O(n)) |
+| Selection sort | Repeatedly swap minimum element to front       | O(n^2)                             | O(n^2) | No                      | No                             |
+| Insertion      | Build a sorted sublist at the front            | O(n)                               | O(n^2) | Yes (strict inequality) | Yes (if element is added to back, which is usually O(1)) |
+
