@@ -76,3 +76,15 @@ sw  $t3, 8($t0)    # the_list[i+1] = $t3
 | Selection sort | Repeatedly swap minimum element to front       | O(n^2)                             | O(n^2) | No                      | No                             |
 | Insertion      | Build a sorted sublist at the front            | O(n)                               | O(n^2) | Yes (strict inequality) | Yes (if element is added to back, which is usually O(1)) |
 
+# Misc
+
+* Assertions
+    * Check preconditions which must not be violated in between your own code
+    * Do not use this to validate user input - this is an "expected" violation of requirements but not precondition
+    * AssertionError raised if False
+* Exceptions
+    * Use in "exceptional" cases e.g. invalid user input
+* Unit testing
+    * Test valid and invalid cases of code
+    * Ensure correct results produced
+    * Ensure correct exceptions raised
