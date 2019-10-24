@@ -71,10 +71,11 @@ sw  $t3, 8($t0)    # the_list[i+1] = $t3
     * n is number of element in the list
     * You might need to multiply complexity by comparison cost e.g. if strings
 
-| Algorithm      | Overview                                       | Best                               | Worst  | Stable                  | Incremental                    |
+| Algorithm      | Overview                                       | Best                               | Worst  | Stable                  | Incremental                                                     |
+|----------------|------------------------------------------------|------------------------------------|--------|-------------------------|-----------------------------------------------------------------|
 | Bubble sort    | Repeatedly swap adjacent out-of-order elements | O(n^2), or O(n) if detecting swaps | O(n^2) | Yes (strict inequality) | Yes (if element added to front, which sucks because it is O(n)) |
-| Selection sort | Repeatedly swap minimum element to front       | O(n^2)                             | O(n^2) | No                      | No                             |
-| Insertion      | Build a sorted sublist at the front            | O(n)                               | O(n^2) | Yes (strict inequality) | Yes (if element is added to back, which is usually O(1)) |
+| Selection sort | Repeatedly swap minimum element to front       | O(n^2)                             | O(n^2) | No                      | No                                                              |
+| Insertion      | Build a sorted sublist at the front            | O(n)                               | O(n^2) | Yes (strict inequality) | Yes (if element is added to back, which is usually O(1))        |
 
 # Data structures (abstract data types)
 
