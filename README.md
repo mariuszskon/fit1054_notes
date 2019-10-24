@@ -76,6 +76,34 @@ sw  $t3, 8($t0)    # the_list[i+1] = $t3
 | Selection sort | Repeatedly swap minimum element to front       | O(n^2)                             | O(n^2) | No                      | No                             |
 | Insertion      | Build a sorted sublist at the front            | O(n)                               | O(n^2) | Yes (strict inequality) | Yes (if element is added to back, which is usually O(1)) |
 
+# Data structures (abstract data types)
+
+* Abstract data types
+    * Possible values
+    * Meaning of those values
+    * Operations
+    * Do not care about implementation
+* Data types
+    * Abstract data types but concretely implemented
+* Data structures
+    * A particular way in which data is physically organised memory
+
+* Benefits of using abstract data types (ADTs)
+    * Provides info regarding possible values and their meaning
+    * Simplicity - only the operations are exposed, not the inner workings
+    * Reusability - they are quite generic and can be reused in many different situations
+    * Flexibility - different implementations can be used interchangeably
+
+* Arrays
+    * Backbone of many data types, particularly list-like ones
+    * Fixed length!
+    * You may need to keep track of size of your data type within the actual allocated space
+* Objects
+    * Everything in python is an object
+    * You have attributes (variables of this instance) and methods (functions which can modify these attributes)
+    * They can point to other objects to created linked structures
+    * Very useful for implementing basically all data types we cover
+
 # Misc
 
 * Python variable representation
