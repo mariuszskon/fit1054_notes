@@ -78,6 +78,11 @@ sw  $t3, 8($t0)    # the_list[i+1] = $t3
 
 # Misc
 
+* Python variable representation
+    * Your variable names do not hold the actual values
+    * They hold pointer to actual values
+    * This is why lists are mutable - your variable name still points to the same thing
+    * Be careful
 * Assertions
     * Check preconditions which must not be violated in between your own code
     * Do not use this to validate user input - this is an "expected" violation of requirements but not precondition
