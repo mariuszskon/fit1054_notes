@@ -171,3 +171,10 @@ By keeping count of elements as you add/remove them, length check can be O(1).
     * Test valid and invalid cases of code
     * Ensure correct results produced
     * Ensure correct exceptions raised
+* Iterable
+    * Class which defines \_\_iter\_\_(self)
+    * Returns a class (iterator) which defines \_\_next\_\_(self)
+        * This maintains state
+        * Return next element if it exists
+        * Raises `StopIteration` when no more elements
+        * This exception is automatically caught when you do `for x in my_iterator` and tells the for loop to stop
