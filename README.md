@@ -96,11 +96,12 @@ sw  $t3, 8($t0)    # the_list[i+1] = $t3
     * Basically an optimisation over recursion so you don't recompute the same results over and over
 
 
-| Algorithm                            | Overview                               | Best | Worst |
-|--------------------------------------|----------------------------------------|------|-------|
-| Fibonacci                            | Build on previous two cells in array   | O(n) | O(n)  |
-| Longest sequence of positive numbers | Get longest sequence ending at index i | O(n) | O(n)  |
-| Maximum subsequence sum              | Get maximum sum ending at index i      | O(n) | O(n)  |
+| Algorithm                            | Overview                               | Best               | Worst              |
+|--------------------------------------|----------------------------------------|--------------------|--------------------|
+| Fibonacci                            | Build on previous two cells in array   | O(n)               | O(n)               |
+| Longest sequence of positive numbers | Get longest sequence ending at index i | O(n)               | O(n)               |
+| Maximum subsequence sum              | Get maximum sum ending at index i      | O(n)               | O(n)               |
+| Knapsack                             | M[first_items, capacity]               | O(items\*capacity) | O(items\*capacity) |
 
 # Data structures (abstract data types)
 
