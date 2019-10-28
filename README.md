@@ -77,6 +77,20 @@ sw  $t3, 8($t0)    # the_list[i+1] = $t3
 | Selection sort | Repeatedly swap minimum element to front       | O(n^2)                             | O(n^2) | No                      | No                                                              |
 | Insertion      | Build a sorted sublist at the front            | O(n)                               | O(n^2) | Yes (strict inequality) | Yes (if element is added to back, which is usually O(1))        |
 
+* Recursion
+    * Arity
+        * Unary - one recursive call
+        * Binary - two recursive calls (e.g. Fibonaci, merge sort)
+        * n-ary - n recursive calls
+    * Direct - function calls itself within itself
+    * Indirect/mutual - function calls a different function which ends up calling the original function
+    * Tail recursion - recursive call is last, no addition or other transformation
+        * This can be optimised by compilers so you can reuse the same stack frame, basically making your recursion iterative
+    * Converting iterative algorithm into recursive one
+        * Possible, and generally straightforward
+    * Converting recursive algorithm into iterative one
+        * Possible, but more difficult (e.g. you might need to manage your own stack)
+
 # Data structures (abstract data types)
 
 * Abstract data types
