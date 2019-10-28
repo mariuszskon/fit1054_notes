@@ -92,11 +92,12 @@ sw  $t3, 8($t0)    # the_list[i+1] = $t3
 
 The following table is compiled based on how these ADTs were concretely implemented.
 Unless specified otherwise, `n` means number of elements and `m` means average size of each element.
+By keeping count of elements as you add/remove them, length check can be O(1).
 
-| Abstract data type | Brief description           | Operations (W= worst Big-O; B= best Big-O)                                                                                                                                                                                            |
-|--------------------|-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| (Unsorted) List    | Basically a python list     | Get item (W=B=O(1))<br>Set item (W=B=O(1))<br>Length (W=B=O(1))<br>Is empty/full (W=B=O(1))<br>Search (W=O(m\*n); B=O(m))<br>Add last/append (W=B=O(1))<br>Delete (W=B=O(m\*n))              |
-| Sorted List        | List but in ascending order | Get item (W=B=O(1))<br>Set item (W=B=O(1))<br>Length (W=B=O(1))<br>Is empty/full (W=B=O(1))<br>Search (W=O(m\*log(n)); B=O(m))<br>Add (W=O(m\*n); B=O(m))<br>Delete (W=O(m\*n)); B=O(m\*log(n))) |
+| Abstract data type | Brief description           | Operations (W= worst Big-O; B= best Big-O)                                                                                                                                                       |
+|--------------------|-----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| (Unsorted) List    | Basically a python list     | Get item (W=B=O(1))<br>Set item (W=B=O(1))<br>Search (W=O(m\*n); B=O(m))<br>Add last/append (W=B=O(1))<br>Delete (W=B=O(m\*n))                  |
+| Sorted List        | List but in ascending order | Get item (W=B=O(1))<br>Set item (W=B=O(1))<br>Search (W=O(m\*log(n)); B=O(m))<br>Add (W=O(m\*n); B=O(m))<br>Delete (W=O(m\*n)); B=O(m\*log(n))) |
 
 * Benefits of using abstract data types (ADTs)
     * Provides info regarding possible values and their meaning
