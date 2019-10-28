@@ -105,6 +105,10 @@ By keeping count of elements as you add/remove them, length check can be O(1).
 | Linked Queue                | FIFO with pointer to front and pointer to rear               | Serve / get front (W=B=O(1))<br>Append / add to back (W=B=O(1))                                                                                 |
 | Linked List                 | Basically a python list, pointer to front of list            | Get item (W=B=O(n))<br>Set item (W=B=O(n))<br>Search (W=O(m\*n); B=O(m))<br>Add last/append (W=B=O(n))<br>Add front/prepend (W=B=O(1))<br>Insert (W=O(n); B=O(1))<br>Delete (by index) (W=O(n); B=O(1)) |
 
+* Data structures which were touched on very very briefly
+    * Circular linked list - linked list but last element points to first
+    * Double linked list - each node not only points to next one but also previous one
+
 * Benefits of using abstract data types (ADTs)
     * Provides info regarding possible values and their meaning
     * Simplicity - only the operations are exposed, not the inner workings
