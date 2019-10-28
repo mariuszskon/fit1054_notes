@@ -86,6 +86,7 @@ sw  $t3, 8($t0)    # the_list[i+1] = $t3
     * Do not care about implementation
 * Data types
     * Abstract data types but concretely implemented
+    * Can either be primitive (built-in and usually quite simple e.g. `int`) or user-defined (e.g. our `LinkedQueue`)
 * Data structures
     * A particular way in which data is physically organised memory
 
@@ -111,7 +112,11 @@ sw  $t3, 8($t0)    # the_list[i+1] = $t3
     * Your variable names do not hold the actual values
     * They hold pointer to actual values
     * This is why lists are mutable - your variable name still points to the same thing
-    * Be careful
+        * Be careful
+    * Garbage collection means python automatically frees up space with no pointers to it
+    * Static scoping means that structure of code determines which variable names override each other
+    * Block scoping means local variables are defined only within their "blocks"
+    * Know how classes affect scoping
 * Assertions
     * Check preconditions which must not be violated in between your own code
     * Do not use this to validate user input - this is an "expected" violation of requirements but not precondition
