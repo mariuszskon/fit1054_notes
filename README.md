@@ -75,7 +75,7 @@ sw  $t3, 8($t0)    # the_list[i+1] = $t3
 |----------------|------------------------------------------------|------------------------------------|--------|-------------------------|-----------------------------------------------------------------|
 | Bubble sort    | Repeatedly swap adjacent out-of-order elements | O(n^2), or O(n) if detecting swaps | O(n^2) | Yes (strict inequality) | Yes (if element added to front, which sucks because it is O(n)) |
 | Selection sort | Repeatedly swap minimum element to front       | O(n^2)                             | O(n^2) | No                      | No                                                              |
-| Insertion      | Build a sorted sublist at the front            | O(n)                               | O(n^2) | Yes (strict inequality) | Yes (if element is added to back, which is usually O(1))        |
+| Insertion sort | Build a sorted sublist at the front            | O(n)                               | O(n^2) | Yes (strict inequality) | Yes (if element is added to back, which is usually O(1))        |
 
 * Recursion
     * Arity
