@@ -92,6 +92,15 @@ sw  $t3, 8($t0)    # the_list[i+1] = $t3
         * Possible, and generally straightforward
     * Converting recursive algorithm into iterative one
         * Possible, but more difficult (e.g. you might need to manage your own stack)
+* Dynamic programming
+    * Basically an optimisation over recursion so you don't recompute the same results over and over
+
+
+| Algorithm                            | Overview                               | Best | Worst |
+|--------------------------------------|----------------------------------------|------|-------|
+| Fibonacci                            | Build on previous two cells in array   | O(n) | O(n)  |
+| Longest sequence of positive numbers | Get longest sequence ending at index i | O(n) | O(n)  |
+| Maximum subsequence sum              | Get maximum sum ending at index i      | O(n) | O(n)  |
 
 # Data structures (abstract data types)
 
