@@ -121,6 +121,17 @@ By keeping count of elements as you add/remove them, length check can be O(1).
     * They can point to other objects to created linked structures
     * Very useful for implementing basically all data types we cover
 
+* Linked data structures
+    * Instead of a contiguous array, you use objects which point to each other
+    * Advantages:
+        * Fast insertion and deletion because no need for reshuffling
+        * Easily resizable
+        * Never full
+        * Less memory allocated in advante (i.e. better if array would be relatively empty)
+    * Disadvantages:
+        * More memory used (constant factor) compared to relatively full array because need to store pointers
+        * Generally no random access, making certain operations more time consuming
+
 # Misc
 
 * Python variable representation
