@@ -90,6 +90,14 @@ sw  $t3, 8($t0)    # the_list[i+1] = $t3
 * Data structures
     * A particular way in which data is physically organised memory
 
+The following table is compiled based on how these ADTs were concretely implemented.
+Unless specified otherwise, `n` means number of elements and `m` means average size of each element.
+
+| Abstract data type | Brief description           | Operations (W= worst Big-O; B= best Big-O)                                                                                                                                                                                            |
+|--------------------|-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| (Unsorted) List    | Basically a python list     | Get item (W=B=O(1))<br>Set item (W=B=O(1))<br>Length (W=B=O(1))<br>Is empty/full (W=B=O(1))<br>Search (W=O(m\*n); B=O(m))<br>Add last/append (W=B=O(1))<br>Delete (W=B=O(m\*n))              |
+| Sorted List        | List but in ascending order | Get item (W=B=O(1))<br>Set item (W=B=O(1))<br>Length (W=B=O(1))<br>Is empty/full (W=B=O(1))<br>Search (W=O(m\*log(n)); B=O(m))<br>Add (W=O(m\*n); B=O(m))<br>Delete (W=O(m\*n)); B=O(m\*log(n))) |
+
 * Benefits of using abstract data types (ADTs)
     * Provides info regarding possible values and their meaning
     * Simplicity - only the operations are exposed, not the inner workings
