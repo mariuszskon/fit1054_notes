@@ -69,7 +69,7 @@ sw  $t3, 8($t0)    # the_list[i+1] = $t3
 
 * Sorting
     * n is number of element in the list
-    * You might need to multiply complexity by comparison cost e.g. if strings
+    * You might need to multiply complexity by comparison cost `m` e.g. if strings or other non-atomic data types
 
 | Algorithm        | Overview                                                                                                     | Best                               | Worst        | Stable                  | Incremental                                                     |
 |------------------|--------------------------------------------------------------------------------------------------------------|------------------------------------|--------------|-------------------------|-----------------------------------------------------------------|
