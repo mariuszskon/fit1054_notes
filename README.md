@@ -206,6 +206,15 @@ By keeping count of elements as you add/remove them, length check can be O(1).
     * Disadvantages:
         * More memory used (constant factor) compared to relatively full array because need to store pointers
         * Generally no random access, making certain operations more time consuming
+    * Optimisations
+        * Self organising linked lists - most recently accessed elements are likely to be accessed again - this encourages the best case when searching
+            * MTF (move to front)
+            * Transposition (swap one place closer)
+            * Both of these cost O(1) due to relinking
+        * Unrolling linked lists
+            * Construct a linked list which consists of arrays which actually hold each element
+            * This saves space on memory pointers
+            * May improve access times to due locality thanks to caching
 
 * Heaps
     * We implement them as arrays starting at index 1 (so index 0 wasted)
