@@ -300,3 +300,13 @@ def hash(word):
     * 100 people have >99.99% chance
     * n people have `1 - (365 \* 364 \* 363 \* ... \* (365 - n - 1))/(365^n)` chance
     * This is relevant to the unit when dealing with hash collisions in hash tables
+* Array optimisations
+    * Shuffling
+        * You can minimise writes by holding on to the element you want to insert and only save it at the end rather than performing repeated swaps
+    * Using integers as lists of booleans
+        * bit lists - 0 or 1 for false/true, using bitwise operators to read/write, which saves a lot of space
+    * Flattening
+        * If you have a multi-dmensional array, you can use arithmetic to access element in a particular spot in a one-dimensional array
+            * e.g. 2d matrix into array means `\[row\]\[col\]` becomes `\[width*row+col\]` (width is number of columns)
+    * Resizing
+        * Double size whenever capacity exceeded
