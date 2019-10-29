@@ -71,13 +71,14 @@ sw  $t3, 8($t0)    # the_list[i+1] = $t3
     * n is number of element in the list
     * You might need to multiply complexity by comparison cost e.g. if strings
 
-| Algorithm      | Overview                                                                                                     | Best                               | Worst        | Stable                  | Incremental                                                     |
-|----------------|--------------------------------------------------------------------------------------------------------------|------------------------------------|--------------|-------------------------|-----------------------------------------------------------------|
-| Bubble sort    | Repeatedly swap adjacent out-of-order elements                                                               | O(n^2), or O(n) if detecting swaps | O(n^2)       | Yes (strict inequality) | Yes (if element added to front, which sucks because it is O(n)) |
-| Selection sort | Repeatedly swap minimum element to front                                                                     | O(n^2)                             | O(n^2)       | No                      | No                                                              |
-| Insertion sort | Build a sorted sublist at the front                                                                          | O(n)                               | O(n^2)       | Yes (strict inequality) | Yes (if element is added to back, which is usually O(1))        |
-| Merge sort     | Recursively merge sorted sublists                                                                            | O(n\*log(n))                       | O(n\*log(n)) | Yes                     | No                                                              |
-| Quick sort     | Recursively pick pivot and put it in the right place (everything lower to left, everything greater to right) | O(n\*log(n))                       | O(n^2)       | No                      | No                                                              |
+| Algorithm        | Overview                                                                                                     | Best                               | Worst        | Stable                  | Incremental                                                     |
+|------------------|--------------------------------------------------------------------------------------------------------------|------------------------------------|--------------|-------------------------|-----------------------------------------------------------------|
+| Bubble sort      | Repeatedly swap adjacent out-of-order elements                                                               | O(n^2), or O(n) if detecting swaps | O(n^2)       | Yes (strict inequality) | Yes (if element added to front, which sucks because it is O(n)) |
+| Selection sort   | Repeatedly swap minimum element to front                                                                     | O(n^2)                             | O(n^2)       | No                      | No                                                              |
+| Insertion sort   | Build a sorted sublist at the front                                                                          | O(n)                               | O(n^2)       | Yes (strict inequality) | Yes (if element is added to back, which is usually O(1))        |
+| Merge sort       | Recursively merge sorted sublists                                                                            | O(n\*log(n))                       | O(n\*log(n)) | Yes                     | No                                                              |
+| Quick sort       | Recursively pick pivot and put it in the right place (everything lower to left, everything greater to right) | O(n\*log(n))                       | O(n^2)       | No                      | No                                                              |
+| Pqueue/heap sort | Form a heap out of elements and repeatedly get_max                                                           | O(n\*log(n))                       | O(n\*log(n)) | No                      | No                                                              |
 
 * Recursion
     * Arity
