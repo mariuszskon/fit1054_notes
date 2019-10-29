@@ -163,6 +163,66 @@ By keeping count of elements as you add/remove them, length check can be O(1).
         * More memory used (constant factor) compared to relatively full array because need to store pointers
         * Generally no random access, making certain operations more time consuming
 
+* Hash tables
+    * Usually allow for O(1) key lookup, as long as collisions do not occur
+    * Collision resolution
+        * If different key produces same hash, we still need to deal with the unique elemnt
+        * Same the key alongside value to ensure it is the right key
+        * Approaches:
+            * Open addressing - each array position holds a single element, if collision occurs, choose another one
+                * For each of these, i means the iteration of the "try again" loop, starting at 0
+                * If some other key is already there, repeat the loop
+                * If it is the same key, overwrite the value
+                * Open addressing could lead to clustering
+                    * Primary clustering - "position collisions" even when hashes do not collide
+                    * Secondary clustering - keys with same hash values have same probe chains
+                * You need to take care to "wrap around" if your incrementing operations exceed last allowable index
+                * Perform iteration at most count times where count is number of inserted elements, to prevent going into infinite loop if table full (or ensure your table is never full)
+                * Common implementations:
+                    * Linear probing - hash+i
+                        * 1/2 load
+                    * Quadratic probing - hash+i^2, or add 2i+1 at the end of each iteration (odd numbers produce squares)
+                        * 1/2 load
+                    * Double hashing - hash + (i+1)\*another\_hash (another\_hash is the same key under a different hash function)
+                        * 2/3 load
+            * Separate chaining - each array contains a linked list (or some other data structure) of items, if collision occurs, add to this data structure
+                * Conceptually simpler because items with same hash stored in the same array slot
+                * Naturally resizes on collisions
+                * Insertions and deletions are dealt with by the data structure
+                * But extra space required for overhead such as links in the case of linked lists
+                * Complexity of data structures then determines worst case
+        * Deletion in open addressing
+            * Lazy deletion - mark an element as "deleted" but so probe chains know not to stop and claim another element does not exist
+            * Rehashing - walk along until next free slot and reinsert these elements into the table
+        * Maintaining efficient size
+            * Keep load factor (filled slots / table size) under recommended values above
+            * When need to expand, double size
+                * But it might be extra smart to ensure prime size, or at least odd, to minimise effects of modulo
+            * When shrinking, halve size
+            * On resizing, you need to rehash to ensure things are in the expected locations
+    * Hash functions
+        * Convert a key into an index for lookup in an array
+        * Return value which is always in range of 0 to last allowable index
+        * deterministic (same input always yields same output)
+        * Good if it is fast
+        * Good if it minimises collisions (multiple different keys producing same hash)
+            * Collisions are usually unavoidable, particularly when mapping large sets onto small sets e.g. all strings to numbers 0-1000000
+        * Perfect hash functions have no collisions, mapping every key into unique postion, but these rely on unique property of allowable keys and requires knowing the entire set in advance
+        * Good functions approximate random functions rather than trying to be perfect
+        * For a uniform hash, chance of collision is 1/tablesize
+    * "the" good enough hash funtion for this unit
+        * deals with permutations of the same letters
+        * is straightforward to implement without being terrible in terms of collisions
+        * you **should*** use a prime table sie and prime base to ensure values are spread out well
+```
+def hash(word):
+    value = 0
+    for i in range(len(word)):
+        value = (value*BASE + ord(word[i])) % tablesize
+    return value
+```
+
+
 # Misc
 
 * Python variable representation
