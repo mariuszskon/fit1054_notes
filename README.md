@@ -183,6 +183,21 @@ By keeping count of elements as you add/remove them, length check can be O(1).
         * More memory used (constant factor) compared to relatively full array because need to store pointers
         * Generally no random access, making certain operations more time consuming
 
+* Heaps
+    * We implement them as arrays starting at index 1 (so index 0 wasted)
+    * To get left child, 2\*k
+    * To get right child, 2\*k + 1
+    * To get parent for a node for k > 1, k//2
+    * Remember to choose the largest child when sinking
+    * If we build heap bottom-up, and then repeatedly extract maximum and place it in the "hole" created by the extraaction (at the end of array), we get a sorted list (aka heap sort)
+    * Bottom up heap construction involves going from right of array and working leftwards to heap-ify
+        * Start at last non-leaf and apply the sink procedure
+        * This takes O(m\*n) time
+```
+for i in range(max_size//2, 0, -1):
+    self.sink(i)
+```
+
 * Hash tables
     * Usually allow for O(1) key lookup, as long as collisions do not occur
     * Collision resolution
