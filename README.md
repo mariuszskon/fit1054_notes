@@ -1,6 +1,6 @@
 # What this is
 
-An inconsistent-in-quality collection of notes mainly aimed at FIT1054 Computer science (advanced), but since it is generally a superset of FIT1008 and FIT2085, it works for those too.
+An inconsistent-in-quality collection of notes mainly aimed at FIT1054 Computer science (advanced), but since that is generally a superset of FIT1008 and FIT2085, it works for those too.
 
 These notes are probably more useful to know what to revise rather than actually revising, as the units have a string applied focus.
 
