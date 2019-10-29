@@ -64,12 +64,30 @@ sw  $t3, 8($t0)    # the_list[i+1] = $t3
     * do not forget unconditional jumps at end of if for an if-else, or at end of loop
 * Compiler optimisations
     * Constant folding - evaluate constant expressions at compile time e.g. 24 * 365 => 8760
-    * Multiplication by powers of two - use sll e.g. instead of x*8 do x << 3
-    * Division by powers of two - use srl (logical) or sra (arithmetic)
+    * Bitwise/bitshifting operations
+        * Multiplication by powers of two - use sll e.g. instead of x*8 do x << 3
+        * Division by powers of two - use srl (logical) or sra (arithmetic)
+        * AND 1 tells you if a number is odd
     * Reordering expressions to use fewer registers
-    * Reusing reisters instead of reading/writing from/to memory all the time
-    * Changing loop conditions (if safe) or deferring them until after first iteration
+    * Reusing registers instead of reading/writing from/to memory all the time
+    * Loops
+        * Changing loop conditions (if safe) (e.g. for (i = 0; i < 20; i++) and i not modified inside =\> for (i = 0; i != 20; i++))
+        * Deferring loop conditions until after first iteration (e.g. for (i = 0; i < 20; ...))
     * Breaking functional calling conventions to reduce instructions, including passing arguments by registers, not using $fp, not using $ra (if safe)
+    * Eliminating jumps so fetching suits pipeline (just get next instruction), branch prediction more effective
+        * Duplicate code (copying blocks of code, inlining functions, loop unrolling)
+        * Rearrange conditionals so most ocmmon branch first
+        * Other operations
+    * Inline functions
+        * Calling functions has instruction (time) and stack (space) cost
+        * You can just copy the function code in many cases
+    * Tail recursion
+        * If your algorithm has been implemented in a tail recursive friendly way you can reuse the same stack frame for each call because its contents will not be used when returning
+* Evaluating compiler optimisations
+    * Often a trade off of time vs speed
+    * Trade off of efficiency and readability
+    * Loss of reusability, increased chance of errors
+    * Try to only optimise code which runs often, do not worry about code which runs very rarely
 
 # Algorithms
 
