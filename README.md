@@ -146,6 +146,23 @@ By keeping count of elements as you add/remove them, length check can be O(1).
     * Backbone of many data types, particularly list-like ones
     * Fixed length!
     * You may need to keep track of size of your data type within the actual allocated space
+* Trees
+    * Graphs (as in graph theory)
+    * Has nodes connected by edges
+    * No circuits i.e. one unique path between any two notes
+    * We usually choose a node to be the root
+    * Leaves are nodes without any children
+    * Binary trees
+        * Have at most two children
+        * Perfect binary trees have 2^(k+1)-1 nodes
+        * Height of balanced tree is O(log(n))
+        * Height of unbalanced tree (e.g. "stick") is O(n)
+        * Balance is calculated as `|height(left\_subtree) - height(right\_subtree)| <= 1`
+        * Binary tree traversal
+           * Preorder - root, then recurse left, recurse right
+           * Inorder - recurse left, root, recurse right
+           * Postorder - recurse left, recurse right, root
+        * Each x-order leads to x-fix notation for mathematical expressons, where postfix is Reverse Polish Notation
 * Objects
     * Everything in python is an object
     * You have attributes (variables of this instance) and methods (functions which can modify these attributes)
