@@ -292,3 +292,11 @@ def hash(word):
         * Return next element if it exists
         * Raises `StopIteration` when no more elements
         * This exception is automatically caught when you do `for x in my_iterator` and tells the for loop to stop
+* Birthday paradox / birthday problem
+    * The somewhat unintuitive problem that as number of people increases, probability that any two share the same birthday increases rapidly
+    * Assuming there are 365 possible birthdays of equal probability
+    * 23 people have a >50% chance
+    * 50 people have >95% chance
+    * 100 people have >99.99% chance
+    * n people have `1 - (365 \* 364 \* 363 \* ... \* (365 - n - 1))/(365^n)` chance
+    * This is relevant to the unit when dealing with hash collisions in hash tables
