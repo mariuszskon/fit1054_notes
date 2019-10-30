@@ -62,6 +62,22 @@ sw  $t3, 8($t0)    # the_list[i+1] = $t3
     * You cannot use ALU operations (arithmetic, logic) on memory, you must load them into registers first, then store the results
     * When doing comparisons, you usually want the exact opposite e.g. say you want if (x > 2) {...} you want to jump after the block on condition !(2 < x) (slt then bne)
     * do not forget unconditional jumps at end of if for an if-else, or at end of loop
+    * Function calling conventions in the reference sheet that are defined as "actually necessary" by this unit (aka. not "just conventions", do not hack around them):
+        1. Caller:
+            * save / restore temporary registers (on / from stack)
+            * pass arguments on stack
+            * call the callee function with `jal`
+        2. Callee:
+            * save / restore $ra
+            * allocate / deallocate local variables
+            * return with `jr $ra`
+    * Function calling conventions in the reference sheet that are defined as "just conventions" by this unit (hacking is possible, but discouraged):
+        1. Caller:
+            * clear arguments off stack
+            * use return value in $v0
+        2. Callee:
+            * sets $v0 to return value
+            * save / restore $fp
 * Compiler optimisations
     * Constant folding - evaluate constant expressions at compile time e.g. 24 * 365 => 8760
     * Bitwise/bitshifting operations
