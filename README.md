@@ -121,13 +121,20 @@ MIPS
 	lw $t1, y
 	
 # Check comparison
+
 	# (x <= y) == !(y < x) 
 	slt $t2, $t1, $t0
-	bne $t2, $0, else
+	bne $t2, $0, endif
+OR
+	# (x <= y) == (x < y + 1), given that both are integers
+	addi $t1, $t1, 1
+	slt $t2, $t0, $t1
+	beq $t2, $0, endif
+
 if:
 	# Do Something
 
-else: 
+endif: 
 	# Do Something
 ```
 
