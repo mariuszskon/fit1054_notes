@@ -104,6 +104,32 @@ sw  $t3, 8($t0)    # the_list[i+1] = $t3
     * Trade off of efficiency and readability
     * Loss of reusability, increased chance of errors
     * Try to only optimise code which runs often, do not worry about code which runs very rarely
+* Simple comparison
+
+Python
+```python
+if x <= y:
+    # Do something
+else:
+	# Do something else
+```
+MIPS
+```
+
+	# Given that x,y are both defined in the text segment
+	lw $t0, x
+	lw $t1, y
+	
+# Check comparison
+	# (x <= y) == !(y < x) 
+	slt $t2, $t1, $t0
+	bne $t2, $0, else
+if:
+	# Do Something
+
+else: 
+	# Do Something
+```
 
 # Algorithms
 
