@@ -341,7 +341,7 @@ def hash(word):
     * 23 people have a >50% chance
     * 50 people have >95% chance
     * 100 people have >99.99% chance
-    * n people have `1 - (365 \* 364 \* 363 \* ... \* (365 - n - 1))/(365^n)` chance
+    * n people have `1 - (365 \* 364 \* 363 \* ... \* (365 - n + 1))/(365^n)` chance
     * This is relevant to the unit when dealing with hash collisions in hash tables
 * Array optimisations
     * Shuffling
