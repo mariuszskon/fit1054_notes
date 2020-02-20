@@ -61,6 +61,39 @@ sw  $t3, 8($t0)    # the_list[i+1] = $t3
     * .ascii "Hello" does not null terminate (when string ends is not specified), so please use .asciiz
     * You cannot use ALU operations (arithmetic, logic) on memory, you must load them into registers first, then store the results
     * When doing comparisons, you usually want the exact opposite e.g. say you want if (x > 2) {...} you want to jump after the block on condition !(2 < x) (slt then bne)
+        * Example
+
+Python
+```python
+if x <= y:
+    # Do something
+else:
+	# Do something else
+```
+MIPS
+```
+	# Given that x,y are both defined in the text segment
+	lw $t0, x
+	lw $t1, y
+	
+# Check comparison
+
+	# (x <= y) == !(y < x) 
+	slt $t2, $t1, $t0
+	bne $t2, $0, endif
+OR
+	# (x <= y) == (x < y + 1), given that both are integers
+	addi $t1, $t1, 1
+	slt $t2, $t0, $t1
+	beq $t2, $0, endif
+
+if:
+	# Do Something
+
+endif: 
+	# Do Something
+```
+
     * do not forget unconditional jumps at end of if for an if-else, or at end of loop
     * Function calling conventions in the reference sheet that are defined as "actually necessary" by this unit (aka. not "just conventions", do not hack around them):
         1. Caller:
